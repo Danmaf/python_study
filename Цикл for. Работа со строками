@@ -1,0 +1,81 @@
+#####################################################
+
+visitors = 0
+for i in range(10):
+  word = input('Введите слово: ')
+  if (word == 'Карамба') or (word == 'карамба'):
+    print('Ты проходишь!')
+    visitors += 1
+  else:
+    print('Ты не проходишь!')
+print('Кол-во гостей:', visitors)
+
+#####################################################
+
+rows = int(input("Введите количество рядов: "))
+seats = int(input("Введите количество сидений в ряде: "))
+space = int(input("Введите количество свободных метров между рядами: "))
+
+layout = ''
+if rows < 1 or seats < 1 or space < 0:
+    print("Некорректные данные")
+else:
+    row_template = "=" * seats
+    for row in range(rows):
+        layout += row_template
+        if row < rows:
+            layout += " *** " + row_template + "\n"
+
+    # Печатаем результат
+    print("Макет театра:")
+    print(layout)
+
+#####################################################
+
+x = 6
+y = 19
+print('Марсоход находится на позиции', x, ',', y)
+
+min_x = 0
+max_x = 20
+min_y = 0
+max_y = 20
+
+while True:
+    command = input('Введите команду (W-A-S-D для движения): ')  # Получение команды от оператора
+
+    # Проверяем направление и границы
+    if command == 'W' and y < max_y:  # Север
+        y += 1
+    elif command == 'S' and y > min_y:  # Юг
+        y -= 1
+    elif command == 'A' and x > min_x:  # Запад
+        x -= 1
+    elif command == 'D' and x < max_x:  # Восток
+        x += 1
+
+    # Вывод текущей позиции
+    print('Марсоход находится на позиции', x, ',', y)
+
+#####################################################
+
+text = input('Введите текст: ')
+count = 0
+max = 0
+for num in text:
+  if num == ' ':
+    count = 0
+  else:
+    count += 1
+    if count > max:
+      max = count
+print(max)
+
+#####################################################
+
+text = input('Введите 10 стоил (a - занято, b - свободно):')
+milk = 0
+for number, symbol in enumerate(text):
+    if symbol == 'b':
+        milk += 2 * (number + 1)
+print('Произведено молока за день', milk, 'литра')
