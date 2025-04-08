@@ -1,0 +1,48 @@
+zapas = int(input('Запас гречки: '))
+months = 0
+for i in range(zapas, -1, -4):
+  print(months, 'месяц запас гречки:', i, 'кг')
+  months += 1
+
+####################################################
+
+klients = int(input('Сколько должников: '))
+dolg_sum = 0
+for i in range(0, klients, 5):
+  print('Клиент №', i)
+  dolg = int(input('Сколько должен: '))
+  dolg_sum += dolg
+print('Суммарный долг: ', dolg_sum)
+
+####################################################
+
+time = int(input('Введите время для обратного отсчёта (в секундах)'))
+for i in range(time, 0, -1):
+  print('Осталось', i, 'секунд')
+  answer = int(input('Введите 1, если еда готова, или 0, чтобы продолжить:'))
+  if answer == 1:
+      print('Ваша еда готова, можете забрать! Таймер был прерван на', i, 'секундах.')
+      break
+else:
+  print('Ваша еда готова. Осторожно, горячo!')
+
+####################################################
+
+first_point = int(input('Начало отрезка: '))
+last_point = int(input('Конец отрезка: '))
+step = int(input('Шаг: '))
+for x in range(last_point, first_point - 1, step):
+  y = x**3 + 2*x**2 - 4*x + 1
+  print('В точке', x, 'функция равна', y)
+
+####################################################
+
+stipendia = int(input('Стипендия: '))
+rashod = int(input('Расход: '))
+rashod_final = 0
+for i in range(1, 11, 1):
+  rashod_total = rashod - stipendia
+  print(i, 'месяц: траты', rashod, 'рублей, не хватает', rashod_total, 'рублей')
+  rashod += int(rashod * 0.03)
+  rashod_final += rashod_total
+print('Сумма денег, которую необходимо получить у родителей:', rashod_final, 'рублей')
