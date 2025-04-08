@@ -1,0 +1,68 @@
+count = 0
+for a in range(10):
+  number = int(input("Введите число: "))
+  if number > 0 and number % 2 == 0:
+    count += 1
+print('Количество одновременно чётных и положительных чисел:', count)
+
+##################################################
+
+full_sallary = 0
+months = 1
+for months in range(12):
+ salary = int(input('Введите зарплату за месяц:'))
+ full_sallary += salary
+print('Средняя заплата за год:' , int(full_sallary / 12))
+
+##################################################
+
+student = int(input('Сколько человек в классе? '))
+five = 0
+four = 0
+three = 0
+for student in range(5):
+  n = int(input('Введите оценку ученика: '))
+  if n == 5:
+    five += 1
+  elif n == 4:
+    four += 1
+  if n == 3:
+    three +=1
+
+#print(three)
+#print(four)
+#print(five)
+
+if (three > four) & (three > five):
+  print('сегодня больше: троечников')
+elif (four > three) & (four > five):
+  print('сегодня больше: хорошистов')
+else:
+  print('сегодня больше: отличников')
+
+##################################################
+
+a = int(input("Введите начало отрезка (a): "))
+b = int(input("Введите конец отрезка (b): "))
+total_sum = 0
+count = 0
+has_multiples = False
+for num in range(a, b + 1):
+    if num % 3 == 0:
+        has_multiples = True
+        print(num)
+        total_sum += num
+        count += 1
+if count > 0:
+     average = total_sum / count
+     print('Среднее арифметическое чисел, кратных 3 в отрезке', a, ';', b, ':', average)
+else:
+     print('В отрезке', a, ';', b, 'нет чисел, кратных 3.')
+
+##################################################
+
+for number in range(10, 100):
+    tens = number // 10  # Первая цифра
+    ones = number % 10   # Вторая цифра
+    if number == 3 * (tens * ones):
+        print(number)
