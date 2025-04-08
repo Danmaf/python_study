@@ -1,0 +1,58 @@
+n = 1
+while n != 4:
+   print(n, '** 3 =', n ** 3)
+   n += 1
+
+################################################
+
+n = int(input("Введите число:"))
+count = 0
+while n > 0:
+    count = count + 1
+    n = n // 10
+    print("Количество цифр равно:", count)
+print('Ошибка')
+
+################################################
+
+total_tasks = 0
+answered_call = False
+hours_worked = 0
+while hours_worked < 8:
+    hours_worked += 1
+    print(hours_worked,'час')
+    tasks_this_hour = int(input('Введите кол-во задач: '))
+    total_tasks += tasks_this_hour
+    if not answered_call:  # Если Максим еще не ответил на звонок
+        call_response = input("Супруга звонит. Ответите на звонок? (1 - да/0 - нет): ")
+        if call_response == '1':
+            answered_call = True  # Максим ответил на звонок
+            print("Нужно зайти в магазин.")
+
+    if hours_worked == 8:
+      break
+print('Максим выполнил', total_tasks, 'задач за день.')
+
+################################################
+
+x = int(input('Введите сумму вклада: '))
+p = int(input('Введите процентную ставку: '))
+y = int(input('Введите желаемую сумму: '))
+year = 0
+while x < y:
+    x += x * p // 100
+    year += 1
+    print(year, 'год.', x)
+print('Кол-во лет для достижения порога:', year)
+
+################################################
+
+a = int(input('Число:'))
+num_count = 0
+while a != 7:
+  if a < 7:
+    print('Меньше. Ещё раз')
+  else:
+    print('Больше. Ещё раз')
+  num_count += 1
+print('Вы угадали! Число попыток:', num_count)
